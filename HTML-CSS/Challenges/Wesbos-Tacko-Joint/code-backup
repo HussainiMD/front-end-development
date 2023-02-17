@@ -1,0 +1,226 @@
+<body>
+  <main class="showcase">
+    <section class="showcase-product-menu">
+      <div class="showcase-product-menu-action-area">
+        <button class="call-to-action">Menu</button>
+      </div>
+      <div class="showcase-product-menu-items">
+        <button class="showcase-product-menu-item call-to-action">tacos</button>
+        <button class="showcase-product-menu-item call-to-action">beers</button>
+        <button class="showcase-product-menu-item call-to-action">wines</button>
+        <button class="showcase-product-menu-item call-to-action">desserts</button>
+        <button class="showcase-product-menu-item call-to-action">reservations</button>
+      </div>
+    </section>
+    
+    <section class="showcase-product-display">
+      <img class="showcase-product-display-image" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="picture of food dish">
+      <div class="showcase-product-display-restaurant">
+       <span class="yellow-background-text ">terry's taco joint</span>
+       <span class="yellow-background-text">pretty good tachos!</span>                
+      </div>
+      <button class="showcase-product-display-action call-to-action">
+       <span>1.99</span>
+       <h5>tacos</h5>
+      </button>
+      <button class="showcase-product-display-action call-to-action">
+       <span>3.99</span>
+       <h5>kombucha</h5>
+      </button>
+    </section>    
+    
+    <section class="showcase-items">
+      <button class="showcase-item">
+        <img src="https://emojigraph.org/media/lg/taco_1f32e.png" alt="tacos image">
+        <span>tacos</span>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic eum a omnis consequuntur nihil facere.</p>
+      </button>
+      <button class="showcase-item">
+        <img src="https://img.icons8.com/emoji/256/beer-mug.png" alt="beer mug image">
+        <span>beer</span>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic eum a omnis consequuntur nihil facere.</p>
+      </button>
+      <button class="showcase-item">
+        <img src="https://gitlab.winehq.org/uploads/-/system/project/avatar/36/oic_winlogo_8_256x256x32.png" alt="wine glass with half wine image">
+        <span>wine</span>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic eum a omnis consequuntur nihil facere.</p>
+      </button>
+      <button class="showcase-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Simple_Music.svg/600px-Simple_Music.svg.png" alt="Music icon">
+        <span>music</span>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic eum a omnis consequuntur nihil facere.</p>
+      </button>
+    </section>
+    
+    <section class="showcase-featured">
+      <img src="https://deltaco.com/files/menu/item/1-DEL-116_Promo4_Product_Hero_Image_Crispy_Chicken_Guac_860x480.png?v=4.019" alt="taco food image">
+      <div class="showcase-featured-details">
+        <h4>Featured Taco</h4>
+        <p>Slim Profile, easy to hold and located with cheese. This is the one you have been waiting for</p>
+        <button class="call-to-action">Learn More</button>
+      </div>  
+    </section>
+    
+    <section class="showcase-instant-grams">
+      <span>instant grams</span>
+      <div class="showcase-instant-grams-container">
+        <img src="//unsplash.it/200" alt="randome image">
+        <img src="//unsplash.it/201" alt="randome image">
+        <img src="//unsplash.it/202" alt="randome image">
+        <img src="//unsplash.it/203" alt="randome image">
+        <img src="//unsplash.it/204" alt="randome image">
+        <img src="//unsplash.it/205" alt="randome image">
+        <img src="//unsplash.it/199" alt="randome image">
+        <img src="//unsplash.it/198" alt="randome image">
+        <img src="//unsplash.it/197" alt="randome image">
+        <img src="//unsplash.it/196" alt="randome image">
+      </div>
+    </section>
+  </main>
+</body>
+
+
+
+body {
+  font-family:verdana, tahoma, 'sans serif';
+  font-size:1.2rem;
+  background: linear-gradient(to right, palevioletred 80%, blueviolet);
+}
+
+/* utility class for yellow button*/
+.call-to-action {
+  background-color: gold;
+  border-color: gold;
+  padding: 0.5em;
+  font-size:0.7em;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: capitalize;
+}
+
+/*normal text with yellow background */
+.yellow-background-text {
+  background-color: gold;
+  padding: 0.1em;
+}
+
+.showcase {
+  width:95%;
+  margin: auto;
+}
+
+.showcase-product-menu {
+  margin: 0.6em 0;
+}
+
+.showcase-product-menu-action-area > button::before {
+  content: '\2630';
+  margin-right:0.08em;
+}
+
+.showcase-product-display-restaurant > span {  
+  text-transform: capitalize;  
+  font-weight: 600;  
+}
+
+.showcase-product-display-restaurant > span:first-child {
+  display: block;
+  font-size: 1.8em;   
+  width: fit-content;
+  margin: 0.5em 0;
+}
+
+
+.showcase-product-display-action > span {
+  font-family: 'Century Gothic';
+  font-size: 5em;
+  font-weight: 100;  
+}
+
+.showcase-product-display-action > span::before {
+  content: '$';
+  font-family: 'Century Gothic';
+}
+
+.showcase-product-display-action > h5 {
+  font-size:1.8em;
+  margin: 0;
+}
+
+.showcase-item {   
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, .15);  
+  backdrop-filter: blur(5px);
+  border-color:rgba(255, 255, 255, .15);
+}
+
+.showcase-item > img {
+  width: 5em;  
+}
+
+.showcase-item > span {
+  display: block;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin: 0.6em 0;
+}
+
+.showcase-item > p {
+  width: 95%;
+  margin: auto;
+  font-family: 'Century Gothic';
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.showcase-featured {
+  background-color:white;
+}
+
+.showcase-featured-details > p {
+  font-family: 'Century Gothic';
+  font-size: 0.8em;
+  font-weight: 600;
+}
+
+.showcase-featured-details > button::after {
+  content: '\21A0';
+  font-size: 1.8em; 
+  line-height:1.5;
+}
+
+.showcase-instant-grams > span {
+  display: block;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight:600;
+  letter-spacing: 0.1em;
+  padding: 2em 0;  
+  position: relative;
+  z-index:0;
+  outline: 2px dotted green;
+}
+
+.showcase-instant-grams > span::before {
+  content: '';  
+  position: absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  width:41%;
+  height:0.6em;  
+  margin-top:auto;
+  margin-bottom:auto;
+  background: linear-gradient(to right, transparent 40%, gold);
+  z-index:-1;  
+}
+
+.showcase-instant-grams > span::after {
+  content: '';
+  position: relative;  
+  height: 0.8em;
+  background: linear-gradient(to left, transparent 40%, gold);
+  outline: 1px solid blue;
+}
