@@ -62,7 +62,9 @@
     </section>
     
     <section class="showcase-instant-grams">
-      <span>instant grams</span>
+      <div class="showcase-instant-grams-header">
+        <span>instant grams</span>   
+      </div>
       <div class="showcase-instant-grams-container">
         <img src="//unsplash.it/200" alt="randome image">
         <img src="//unsplash.it/201" alt="randome image">
@@ -80,11 +82,15 @@
 </body>
 
 
-
 body {
   font-family:verdana, tahoma, 'sans serif';
   font-size:1.2rem;
   background: linear-gradient(to right, palevioletred 80%, blueviolet);
+}
+
+img {
+  width:100%;
+  object-fit:cover;
 }
 
 /* utility class for yellow button*/
@@ -115,26 +121,62 @@ body {
 
 .showcase-product-menu-action-area > button::before {
   content: '\2630';
-  margin-right:0.08em;
+  margin-right:0.2em;
+}
+
+.showcase-product-menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em;
+    margin-top:1em;
+  }
+  
+  .showcase-product-menu-item {
+    flex: 1;
+    line-height: 2;
+  }
+
+.showcase-product-display {
+  display: grid;
+  grid-template-areas: "text-over-image" "tachos-call-to-action" "kombucha-call-to-action";
+  gap: 0.5em;
+}
+
+.showcase-product-display-image, .showcase-product-display-restaurant {
+  grid-area: text-over-image; 
+}
+
+.showcase-product-display-restaurant {
+  margin: auto;  
+  margin-left: 10%;
+  display: inline-grid;
+}
+
+.showcase-product-display-action:first-child {
+  grid-area: tachos-call-to-action;
+}
+
+.showcase-product-display-action:last-child {
+  grid-area: kombucha-call-to-action;
 }
 
 .showcase-product-display-restaurant > span {  
   text-transform: capitalize;  
-  font-weight: 600;  
+  font-weight: 600;    
+  width: fit-content;
 }
 
 .showcase-product-display-restaurant > span:first-child {
-  display: block;
-  font-size: 1.8em;   
-  width: fit-content;
+ /* font-size: 1.8em;   */
+  font-size: 1.3em;
   margin: 0.5em 0;
 }
 
 
 .showcase-product-display-action > span {
   font-family: 'Century Gothic';
-  font-size: 5em;
-  font-weight: 100;  
+  font-size: 3em; /*5em*/
+  font-weight: 100;  /*100*/
 }
 
 .showcase-product-display-action > span::before {
@@ -143,8 +185,15 @@ body {
 }
 
 .showcase-product-display-action > h5 {
-  font-size:1.8em;
+  font-size:1.2em;/*1.8em*/
   margin: 0;
+}
+
+.showcase-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  gap: 1em;
+  margin: 1em 0;  
 }
 
 .showcase-item {   
@@ -153,6 +202,7 @@ body {
   background-color: rgba(255, 255, 255, .15);  
   backdrop-filter: blur(5px);
   border-color:rgba(255, 255, 255, .15);
+  padding: 0.5em 0;
 }
 
 .showcase-item > img {
@@ -173,54 +223,115 @@ body {
   font-family: 'Century Gothic';
   font-size: 1em;
   font-weight: 600;
+  word-wrap: wrap;
 }
 
 .showcase-featured {
   background-color:white;
 }
 
+.showcase-featured-details {
+ padding: 1em; 
+}
+
 .showcase-featured-details > p {
   font-family: 'Century Gothic';
-  font-size: 0.8em;
+  font-size:0.8em; 
   font-weight: 600;
+}
+
+.showcase-featured-details > button {
+  padding: 1em;
 }
 
 .showcase-featured-details > button::after {
   content: '\21A0';
   font-size: 1.8em; 
-  line-height:1.5;
+  line-height:0;  
 }
 
-.showcase-instant-grams > span {
-  display: block;
+.showcase-instant-grams-header > span {
   text-transform: uppercase;
   text-align: center;
   font-weight:600;
-  letter-spacing: 0.1em;
-  padding: 2em 0;  
-  position: relative;
-  z-index:0;
-  outline: 2px dotted green;
+  letter-spacing: 0.1em;   
+  padding: 0 0.5em;  
 }
 
-.showcase-instant-grams > span::before {
-  content: '';  
-  position: absolute;
-  top:0;
-  left:0;
-  bottom:0;
-  width:41%;
-  height:0.6em;  
-  margin-top:auto;
-  margin-bottom:auto;
+.showcase-instant-grams-header::before {
+  content: '';   
+  height:0.6em;    
+  align-self: center;
   background: linear-gradient(to right, transparent 40%, gold);
-  z-index:-1;  
+  flex:1;
 }
 
-.showcase-instant-grams > span::after {
-  content: '';
-  position: relative;  
-  height: 0.8em;
+.showcase-instant-grams-header::after {
+  content: '';  
+  height:0.6em;    
   background: linear-gradient(to left, transparent 40%, gold);
-  outline: 1px solid blue;
+  flex:1;
+  align-self: center;
+}
+
+.showcase-instant-grams-header {
+  display: flex;
+  padding: 2em 0;
+}
+
+.showcase-instant-grams-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(10em, 100%), 1fr));
+  gap: 0.6em;  
+  place-items: center;
+}
+
+@media screen and (min-width:400px) {
+  .showcase-product-display {
+    grid-template-areas: "text-over-image text-over-image" "tachos-call-to-action kombucha-call-to-action";
+  }
+}
+
+@media screen and (min-width:700px) {  
+   .showcase-product-display {
+    grid-template-areas: "text-over-image tachos-call-to-action" "text-over-image kombucha-call-to-action";
+  }
+  
+  .showcase-product-display-restaurant > span:first-child {
+    font-size: 1.8em;
+  }
+  
+  .showcase-featured > img {
+    max-width: 50%;
+    vertical-align:middle;    
+  }
+  
+  .showcase-featured-details {
+    display: inline-block;    
+    vertical-align: middle;
+    max-width: 40%;        
+  }
+  
+  .showcase-featured-details > p {
+    word-wrap:wrap;
+  } 
+}
+
+@media screen and (min-width:1000px) {
+  .showcase {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .showcase-product-display {
+    order: -1;
+  }
+  
+  .showcase-product-menu-action-area {
+    display: none;
+  }
+   
+  .showcase-product-menu-item {
+    font-size: 1.1em;
+  }
 }
