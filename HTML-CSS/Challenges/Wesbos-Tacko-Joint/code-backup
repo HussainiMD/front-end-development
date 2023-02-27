@@ -2,8 +2,9 @@
   <main class="showcase">
     <section class="showcase-product-menu">
       <div class="showcase-product-menu-action-area">
-        <button class="call-to-action">Menu</button>
-      </div>
+        <!--button class="call-to-action1"></button-->
+        <label for="hidden-menu-checkbox" class="call-to-action">MENU</label>                </div>
+      <input type="checkbox" id="hidden-menu-checkbox"> 
       <div class="showcase-product-menu-items">
         <button class="showcase-product-menu-item call-to-action">tacos</button>
         <button class="showcase-product-menu-item call-to-action">beers</button>
@@ -81,7 +82,6 @@
   </main>
 </body>
 
-
 body {
   font-family:verdana, tahoma, 'sans serif';
   font-size:1.2rem;
@@ -102,6 +102,8 @@ img {
   font-weight: 600;
   letter-spacing: 0.07em;
   text-transform: capitalize;
+  pointer: cursor;
+  user-select: none;
 }
 
 /*normal text with yellow background */
@@ -119,9 +121,19 @@ img {
   margin: 0.6em 0;
 }
 
-.showcase-product-menu-action-area > button::before {
+.showcase-product-menu-action-area > label::before {
   content: '\2630';
-  margin-right:0.2em;
+  margin-right:0.5em
+  line-height: 3;  
+}
+
+#hidden-menu-checkbox {
+  position:absolute;
+  visibility: hidden;
+}
+
+ .showcase-product-menu > #hidden-menu-checkbox:checked + .showcase-product-menu-items{
+  visibility: hidden;
 }
 
 .showcase-product-menu-items {
@@ -317,7 +329,7 @@ img {
   } 
 }
 
-@media screen and (min-width:1000px) {
+@media screen and (min-width:10001px) {
   .showcase {
     display: flex;
     flex-direction: column;
