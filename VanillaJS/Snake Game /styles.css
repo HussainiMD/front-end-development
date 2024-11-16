@@ -1,0 +1,26 @@
+.area {
+    margin: auto;
+    width: 40rem;
+    aspect-ratio: 1/1;
+    background-color: black;
+    color: white;
+    display:grid;
+    grid-template-columns: repeat(40, 1fr);
+    grid-template-rows: repeat(40, 1fr);    
+}
+
+.snake {
+    background-color: red;
+    width:1rem;
+    aspect-ratio: 1/1;
+}
+
+.head {
+    outline:2px solid magenta;
+    outline-offset: 1px;
+    z-index: 1;
+}
+
+.food {
+    background-color: yellow;
+}
