@@ -1,0 +1,52 @@
+/*CSS Resets*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+img, figure, audio, video {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+select, option, ul, ol, li, textarea, button {
+  font:inherit
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* Utils */
+/* For Chrome, Safari, Edge, and Opera */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+
+
+.otp-widget > input {
+  width:3ch;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding:0.5rem;
+  border-style: none;
+  border-bottom: 2px solid;
+  margin:0.6rem;
+  outline-style: none;
+}
+
+.center {
+  width:fit-content;
+  margin: 5rem auto;  
+}
