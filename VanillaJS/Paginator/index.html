@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Paginator</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./styles.css" rel="stylesheet" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <main class="container js-container">
+      <section class="controls js-controls">
+        <div class="vertical js-control-labels">
+          <label>Page Count:</label>
+          <label>Siblings:</label>
+          <label>Boundary:</label>
+        </div>
+        <div class="vertical js-control-inputs">
+          <input type="range" id="pageCount" min="6" max="100" value="6" />
+          <input
+            type="range"
+            id="siblingCount"
+            min="1"
+            max="5"
+            step="1"
+            value="1"
+          />
+          <input
+            type="range"
+            id="boundaryCount"
+            min="1"
+            max="10"
+            step="1"
+            value="1"
+          />
+        </div>
+      </section>
+      <section class="pagination js-pagination"></section>
+    </main>
+  </body>
+</html>
