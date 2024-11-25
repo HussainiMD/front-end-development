@@ -1,0 +1,42 @@
+.container {
+    width:fit-content;
+    margin: 5rem auto;
+}
+
+.controls {
+    margin: 2rem 0;
+    display: flex;    
+    gap:0.5rem;    
+}
+
+.vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.pagination {
+    display: flex;
+    gap:0.3rem;
+    & > button {
+        padding:0.6rem 0.8rem; 
+        border-style: none;
+        border-radius: 5px;
+        cursor: pointer;       
+    }
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+button[selected] {
+    background-color: blue;
+    color: white;
+    outline-style: none;
+}
+
+#moveLeft, #moveRight, #expandLeft, #expandRight {
+    color: turquoise;
+    font-weight: 700;
+}
