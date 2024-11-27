@@ -1,0 +1,75 @@
+*, *::before, *::after {
+    box-sizing:border-box;  
+  }
+  
+  * {
+    margin: 0;
+  }
+  
+  img, figure, picture, audio, video {
+    max-width: 100%;
+    vertical-align: bottom;
+  }
+  
+  button, textarea, select, option, ul, ol {
+    font: inherit;
+  }
+  
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /*main css*/
+  :root {
+    --gamearea-column-count: 4
+  }
+
+  body {
+    padding:1rem;
+  }
+
+  header {
+    width: 60vmin;
+    aspect-ratio: var(--gamearea-column-count)/1;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(var(--gamearea-column-count), 1fr);    
+    cursor: pointer;
+  }
+  
+  span {  
+    width:70%;  
+    aspect-ratio: 1/1;
+    background-color: white;
+    border-radius: 50%;
+  }
+  
+  main {
+    width: 60vmin;
+    aspect-ratio: 1/1;  
+    margin: auto;
+    background-color: grey;
+    display: grid;
+    grid-template-columns: repeat(var(--gamearea-column-count), 1fr);;
+  }
+  
+  section {
+    display: flex;
+    place-content: center;
+    place-items: center;  
+  }
+  
+  span.blue {
+    background-color: blue;
+  }
+
+  span.red {
+    background-color: red;
+  }
+  
+  .usr-msg {
+    width: fit-content;
+    margin: 0.5rem auto;
+  }
+  
+  
