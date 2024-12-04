@@ -1,0 +1,26 @@
+{
+    "uc12343082228777": {
+        "parentId": "",
+        "user": {
+            "name": "John Doe",
+            "avatar": "https://i.pravatar.cc/32?u=User%jd",            
+            "comment" : "Welcome! You can reply to the comments. But you can't delete the initial comment."
+        }
+    },
+    "uc2725050151": {
+        "parentId": "uc12343082228777",
+        "user": {
+            "name": "User 1",
+            "avatar": "https://i.pravatar.cc/32?u=User%1",
+            "comment": "You can reply nested or delete any comment. You can edit the existing comments."
+        }
+    },
+    "uc16968443900": {
+        "parentId": "uc2725050151",
+        "user": {
+            "name": "User 2",
+            "avatar": "https://i.pravatar.cc/32?u=User%2",
+            "comment": "Refresh & see the changes persist. You can reset the comments to the initial state"
+        }
+    }
+}
