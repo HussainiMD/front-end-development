@@ -1,0 +1,91 @@
+*, *::before, *::after {
+    box-sizing:border-box;
+}
+
+* {
+    margin: 0;
+}
+
+input, textarea, ul, ol, li, select, option {
+    font: inherit;
+}
+
+img, figure, picture, audio, video, canvas {
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap:break-word;
+}
+
+/* actual styles */
+:root {
+    --verticalSpace: 1rem;    
+    --leftLineSpace: -0.5%;
+}
+
+
+body {
+    padding: 3rem;
+}
+
+.child {
+    margin: var(--verticalSpace) 0 var(--verticalSpace) 2%;     
+    position: relative;
+  }
+
+/*if there are no nested elements then we should hide the toggle arrow on left*/
+details:not(:has(details)) summary::marker {
+  color: transparent;
+}
+
+/*we will hide value input in case there are nested children. coz children will become value object. we prefer to hide it as during delete we might need to show again along with earlier user input*/
+details:has(details) > summary .value {
+  display: none;
+}
+  
+/*using before we are drawing vertical line and it will dynamically grow as the children list grows. We are using % to adapt to vertical size (height) of the element*/
+  .child::before {
+    content: '';
+    position: absolute;    
+    height: calc(100% + var(--verticalSpace));
+    width: 0.3rem;    
+    top: calc(-1 * var(--verticalSpace));
+    left: var(--leftLineSpace);
+    border-left: 1px solid;    
+  }
+  /*we are usng after to draw little horizontal line just before arrow*/
+  .child::after {
+    content: '';
+    position: absolute;
+    width: 0.5rem;    /*if there is no details tag then 1.5rem*/
+    border-top: 1px solid;
+    left: var(--leftLineSpace);
+    top: 0.7rem;
+    z-index: -1;
+  }
+  
+  /*for last child, we do NOT want it to adapt based on height or number of children*/
+  .child:last-child::before {
+    height: calc(var(--verticalSpace) + 0.8rem);        
+  }
+
+  /*if there are no children then arrow will not be shown. instead line should come further closer to boxes hence changing width*/
+  .child:not(:has(.child))::after {
+    width: 1.5rem;    
+  }
+
+
+  .inline-flex {
+    display: inline-flex;
+    gap: 0.3rem;
+  }
+
+  .btnJson {
+    margin: 1rem 0;
+  }
+
+  output {
+    display: block;
+  }
