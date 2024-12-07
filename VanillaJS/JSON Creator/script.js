@@ -1,5 +1,5 @@
-
-const utils = {
+const utils = {};
+utils.ui = {
     getJSONTreeFragment: function(isContainer = false) {        
         let detailsElem = document.createElement('details');
         if(!isContainer) detailsElem.classList.add('child');
@@ -41,20 +41,25 @@ const utils = {
         btnElem.dataset.action = type;        
         btnElem.textContent = symbol;
         return btnElem;
+    },
+    getDetailsOf: function(elem) {
+        const key = elem.querySelector('.key').value?.trim();            
+        const value = elem.querySelector('.value').value?.trim();        
+        const childList = Array.from(elem.children).filter(elem => elem.classList.contains('child'));
+        return {'key': key, 'value' : value, 'childList' : childList};
     }
 }
 
-function getJSONObjectFrom(elem) {
-    if(!elem) return {};
-    let key = elem.querySelector('.key').value?.trim();
+function getJSONDataFrom(elem) {
+    if(!elem) return {};    
+    const {key, value, childList} = utils.ui.getDetailsOf(elem);
     if(!key || key.length == 0) return {}
     const result =  { [key]: {}};
-    const childList = Array.from(elem.children).filter(elem => elem.classList.contains('child'));
     if(childList.length == 0)         
-        result[key] = elem.querySelector('.value').value?.trim();
+        result[key] = value
     else {
         childList.forEach(child => {
-            const subResult = getJSONObjectFrom(child);
+            const subResult = getJSONDataFrom(child);
             if(Object.keys(subResult).length > 0)                 
                 result[key] = {...result[key], ...subResult};            
         });
@@ -64,12 +69,12 @@ function getJSONObjectFrom(elem) {
 
 
 function viewHandler(container) {
-    const rootNode = utils.getJSONTreeFragment(true);
+    const rootNode = utils.ui.getJSONTreeFragment(true);
     container.append(rootNode);
     container.insertAdjacentHTML('beforeend', '<button class="btn btnJson" id="btnJson" data-action="extract">Get JSON</button><output></output>');
     const addChild = function(elem) {
         if(!container.contains(elem)) return;
-        const node = utils.getJSONTreeFragment();
+        const node = utils.ui.getJSONTreeFragment();
         elem.append(node);
         elem.open = true;
     }
@@ -105,7 +110,7 @@ function appController(container, uiHandlerFn) {
     const handlerExtractOper = function() {
         const elem = container.querySelector('details');
         const outputElem = container.querySelector('output');
-        outputElem.textContent = JSON.stringify(getJSONObjectFrom(elem));
+        outputElem.textContent = JSON.stringify(getJSONDataFrom(elem));
     }
 }
 
