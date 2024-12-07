@@ -1,0 +1,76 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+input, select, option, ul, ol, li, textarea {
+  font: inherit;
+}
+
+img, audio, video, canvas, figure {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*generics*/
+.flex.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.center {
+  display: block;
+  width: fit-content;    
+  margin: 1rem auto;  
+}
+
+.btn {
+  background-color: black;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-style: none;
+  border-radius: 0.2rem;
+  font-size: 1rem;  
+}
+
+/*actual specifics*/
+.map__method {
+  background-color: turquoise;
+  font-weight: 700;
+}
+
+option:not(:checked){  
+  font-weight: initial;
+}
+
+.map > * {
+  margin-top: 1rem;
+}
+
+.map {
+  padding: 1rem 0;
+  box-shadow: 0.1rem 0.1rem 0.2rem gray;
+}
+
+.container {
+  margin: 1rem;  
+  display: flex;
+  flex-direction: column;
+  gap:0.4rem;
+}
+
+
+.map output{
+  min-width: 1rem;
+  height:0.2rem;  
+}
+
+
+
