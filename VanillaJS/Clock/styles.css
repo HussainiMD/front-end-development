@@ -1,0 +1,35 @@
+.clock {
+    width: 20rem;
+    aspect-ratio: 1/1;
+    background-color: lightblue;
+    border: 5px solid blue;
+    border-radius: 50%;
+    margin: 5rem auto;
+    position: relative;
+    & > * {
+        position: absolute;        
+        left: 50%;
+        width: 3px;
+        transform-origin: bottom;
+    }
+}
+
+.hand-secs {   
+    top: 0%; 
+    height: 50%;    
+    background-color: red;        
+}
+
+.hand-mins {
+    top: 10%;
+    height: 40%;
+    width: 4px;
+    background-color: green;        
+}
+
+.hand-hrs {
+    top: 20%;
+    height: 30%;
+    width: 5px;
+    background-color: black;    
+}
