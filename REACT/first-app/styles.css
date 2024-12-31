@@ -1,0 +1,440 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+input, textarea, ul, ol, li, select, option {
+    font: inherit;
+}
+
+img, figure, picture, audio, video, canvas {
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+.app {
+    margin: 2rem;
+}
+
+.banner {
+    margin: 3rem 0;
+}
+
+.clickable, .btn {
+    cursor: pointer;
+}
+
+.hide.hide {
+    display: none;
+}
+
+/* specific styles*/
+.flex{
+    display: flex;
+    gap: 1rem;        
+    flex-wrap: wrap;   
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.btn-round {
+    padding: 0.2rem;
+    border-radius: 50%;
+    border-style: none;
+    font-size:2rem;
+    font-weight: 700;    
+}
+
+.btn-toggle {
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    border-style: none;
+    font-size: 1.2rem;
+    font-weight: 700;    
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.summary {
+    font-size: 1.1rem;
+    color: hsl(237, 21%, 51%);
+}
+
+.light-txt {
+    color: hsl(237, 21%, 51%);
+}
+
+.bold-txt {
+    font-weight: 700;
+}
+
+.cutit {
+    text-decoration: line-through;
+}
+
+/*toggle function*/
+.toggle.toggle {
+    width: 1.5rem;
+    height: 0.6rem;
+    background-color: lightgray;
+    position: relative;
+  }
+  
+  .ball.ball {
+    width: 0.6rem;
+    aspect-ratio: 1/1;
+    background-color: blue;
+    outline: 1px solid black;
+    outline-offset: 1px;
+    position: absolute;
+    pointer-events: none;
+  }
+  
+  .toggle-animate {
+    animation: toggler 1s forwards;
+  }
+  
+  @keyframes toggler {
+    from {
+      left: 0;    
+    }
+    to {
+      right: 0;    
+    }
+  }
+
+/* main css*/
+.card__details, .rating-section, .details__card__body__rating-price {
+    display: flex;
+    place-items: center;
+    gap: 0.2rem;
+}
+
+.logo > img {
+    max-width: 8rem;
+}
+
+.nav {
+  padding: 0 1rem;     
+  list-style-type: none;
+}
+
+.nav__itm > a {
+    text-decoration-line: none;
+    cursor: pointer;
+    font-size:1.2rem;
+    font-weight:700;
+}
+
+.container__header {
+    justify-content: space-between;    
+}
+
+.container__body {
+    margin: 2rem auto;
+    width: 80vw;
+}
+
+
+.display__area {   
+    width: 100%;
+    margin: 1rem auto;     
+    justify-content: start;
+}
+
+.srch__box {
+    width: 100%;
+    margin: auto;
+    display: block;
+    line-height: 2;
+    padding:0.5rem;
+    border-radius: 5px;
+}
+
+
+.card {
+    width: 24%;       
+    padding:0.3rem;             
+    display: flex;
+    flex-direction: column;
+    gap:0.1rem;    
+}
+
+.card__dish {
+    font-size: 1.3rem;
+    /* white-space: nowrap; */
+    text-wrap: nowrap;
+    overflow: hidden;    
+    text-overflow: ellipsis;
+}
+
+.card__footer > * {
+    padding-top: 0.2rem;    
+}
+
+.card:hover {
+    cursor:pointer;
+    box-shadow: 1px 1px 5px lightgray;
+}
+
+.card--overlay__txt {
+    color: white;
+    /* mix-blend-mode: difference; */
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 0.5rem;  
+    align-self: end;     
+}
+
+.card--overlay {        
+    display: grid;   
+    & > * {
+        grid-row : 1/-1;
+        grid-column: 1/-1;    
+    } 
+    & img {                    
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+}
+
+.container__body button {
+    margin: 1rem;
+    color: brown;
+    background-color: hsla(0, 0%, 80%, 0.5);
+    padding: 0.3rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    border-width: 3px;
+    cursor: pointer;
+}
+
+*:focus {
+    outline: 1px solid red;
+    outline-offset: 1px;
+}
+
+body *:disabled {
+    cursor: not-allowed;
+}
+
+.details {
+    max-width: 800px;
+    margin: 3rem auto;
+}
+
+.details__card {
+    margin: 1rem 0;    
+    box-shadow: 3px 3px 6px gray;
+    border-radius: 20px;
+}
+
+.details__card__head {
+    background-color: hsl(351, 100%, 96%);
+    padding: 0.8rem;
+    border-radius: 20px 20px 0 0;
+    color: hsl(349, 77%, 55%);
+    & .icon {
+        margin: 0 0.5rem;
+        background-color: red;
+        color: white;
+        padding: 0.3rem;
+        border-radius: 50%;
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+}
+
+.details__card__body {
+    padding: 0.8rem;
+    font-weight: 700;
+}
+
+.details__card__body__cusines {
+    display: block;
+    color: red;
+    margin: 0.5rem;
+}
+
+.details__card__body__outlets {
+    padding: 0 0.8rem;
+    position: relative;
+}
+
+.details__card__body__outlets li::marker {
+    color: gray;
+}
+
+.details__card__body__outlets li:first-child:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background-color: gray;
+    left: -0.1%;
+    top: 20%;    
+}
+
+.details__card__body__area {
+    color: gray;
+    margin-left: 2rem;
+    border-style: none;
+    font-weight: 400;
+}
+
+.details__deals__head {
+    margin: 0 1rem;
+    justify-content: space-between;
+}
+
+.details__deals__head__nav {
+    gap: 1rem;
+}
+
+.details__deals__body {
+    flex-wrap: nowrap;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.details__deals__body__card {
+    flex-direction: row;
+    gap: 1rem;
+    place-items: center;
+    min-width: fit-content;
+    padding-right: 2rem;
+    border: 1px solid black;
+    border-radius: 20px;
+    & img {
+        height: 5rem;
+        max-width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+    }
+}
+
+.details__deals__body__card__info {
+    font-size:0.8rem;
+}
+
+.details__restaurants__header {
+    border-bottom: 1px solid gray;
+}
+
+.details__restaurants__header > .menu {
+    margin: 2rem;    
+    font-size: 1.7rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.details__restaurants__header > .menu::before, .details__restaurants__header > .menu::after {
+    content: '-&-';
+    margin: 0 0.5rem;
+    font-size:1rem;
+    font-weight: 100;    
+}
+
+.details__restaurants__header__search {
+    position: relative;
+    & input {
+        width:100%;
+        font-size:1.2rem;
+        padding: 0.5rem;
+        background-color: hsl(240, 4%, 95%);
+        border-style: none;
+        border-radius: 5px;
+    }
+    & input::placeholder {
+        text-align: center;
+        color: hsl(210, 3%, 40%);
+    }
+    & button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: transparent;
+        height:100%;
+        border-style: none;
+    }
+}
+
+.details__restaurants__header__filters {
+    margin: 1rem 0;    
+    align-items: center;
+    & button {
+        padding: 0.5rem;
+        font-weight: 700;
+        background-color: transparent;
+        border: 4px solid hsl(240, 4%, 95%);
+        border-radius: 10px;
+    }
+}
+
+.details__restaurants__body {
+    margin: 1rem 0;
+}
+
+.details__restaurants__body__section header {
+    font-size: 2rem;
+    font-weight: 700;
+    color: green;
+}
+
+.card__collection__body {
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.itm__card {
+    flex-wrap: nowrap;
+    gap: 2rem;    
+    justify-content: space-between;
+}
+
+.itm__card__info {    
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.itm__card__action {    
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    & img {
+        max-width:8rem;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+    }
+    & .btn-action {
+        align-self: stretch;
+        max-width: 8rem;
+        background-color: transparent;
+        border: 2px solid gray;
+        color: hsl(158, 72%, 38%);
+        border-radius: 5px;
+        font-size: 1.2rem;
+        font-weight: 700;        
+    }
+    & span {
+        color: hsl(210, 2%, 56%);
+        font-size: 1rem;
+    }
+}
